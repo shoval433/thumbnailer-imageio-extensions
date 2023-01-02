@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>shoval</username>
+      <username>admin</username>
       <password>AP3imsS4srBF4AXtRB4nyn2ZqPv</password>
       <id>central</id>
     </server>
     <server>
-      <username>shoval</username>
+      <username>admin</username>
       <password>AP3imsS4srBF4AXtRB4nyn2ZqPv</password>
       <id>snapshots</id>
     </server>
