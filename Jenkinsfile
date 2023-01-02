@@ -28,7 +28,7 @@ pipeline{
                 script{
                     sh "ls"
                     configFileProvider([configFile(fileId: 'my_settings.xml', variable: 'set')]) {
-                    sh "cd imageio-extensions && mvn -s ${set} clean install"
+                    sh "cd imageio-extensions && mvn -s ${set} deploy"
                     }
                     
                     // sh "ls"
