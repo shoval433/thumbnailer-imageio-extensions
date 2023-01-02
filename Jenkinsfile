@@ -23,7 +23,10 @@ pipeline{
                 echo "========executing bulid img========"
                 script{
                     sh "ls"
-                    sh "cd imageio-extensions && mvn  -s settings.xml clean install"
+                    configFileProvider([configFile(fileId: 'my_settings.xml', variable: 'set')]) {
+                    sh "cd imageio-extensions && mvn -s ${set} clean install"
+                    }
+                    
                     // sh "ls"
                     // sh "mvn clean install"
                     
