@@ -9,6 +9,10 @@ pipeline{
         gitLabConnection('my-repo') 
       
     }
+      tools {
+        maven 'my-work-maven'
+        jdk 'java-8-work'
+    }
     agent any
     stages{
         stage("chekout"){
