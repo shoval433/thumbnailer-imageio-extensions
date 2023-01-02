@@ -23,9 +23,9 @@ pipeline{
                 echo "========executing bulid img========"
                 script{
                     sh "ls"
-                    sh "cd imageio-extensions"
-                    sh "ls"
-                    sh "mvn clean install"
+                    sh "cd imageio-extensions && mvn clean install"
+                    // sh "ls"
+                    // sh "mvn clean install"
                     
                 }
             }
