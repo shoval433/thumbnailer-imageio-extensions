@@ -32,7 +32,7 @@ pipeline{
                     sh "ls"
                     configFileProvider([configFile(fileId: 'my_settings.xml', variable: 'set')]) {
                     // sh "cd imageio-extensions && mvn -s ${set} deploy"
-                    sh "cd imageio-extensions && mvn -s ${set} deploy versions:set -DnewVersion=${TAG}"
+                    sh "cd imageio-extensions && mvn versions:set -DnewVersion=${TAG}&& mvn -s ${set} deploy "
                     }
                     
                     // sh "ls"
