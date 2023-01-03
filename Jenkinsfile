@@ -9,6 +9,9 @@ pipeline{
         gitLabConnection('my-repo') 
       
     }
+    parameters{
+        string name: 'TAG', defaultValue: ''
+    }
       tools {
         maven 'my-work-maven'
         jdk 'java-8-work'
@@ -28,8 +31,8 @@ pipeline{
                 script{
                     sh "ls"
                     configFileProvider([configFile(fileId: 'my_settings.xml', variable: 'set')]) {
-                    sh "cd imageio-extensions && mvn -s ${set} deploy"
-                    // sh "cd imageio-extensions && mvn -s ${set} deploy versions:set -DnewVersion=[3.7]"
+                    // sh "cd imageio-extensions && mvn -s ${set} deploy"
+                    sh "cd imageio-extensions && mvn -s ${set} deploy versions:set -DnewVersion=${TAG}"
                     }
                     
                     // sh "ls"
